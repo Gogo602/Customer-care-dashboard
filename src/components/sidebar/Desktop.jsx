@@ -1,8 +1,7 @@
 import { Link } from 'react-router';
 import { assets } from '../../assets/assets';
-import { MdOutlineDashboard, MdOutlinePendingActions } from 'react-icons/md';
-import { AiOutlineLineChart } from 'react-icons/ai';
-import { FaCog, FaRegStar } from 'react-icons/fa';
+import { MdOutlineDashboard } from 'react-icons/md';
+import { FaCog } from 'react-icons/fa';
 import { LuCoins, LuInbox } from 'react-icons/lu';
 import { PiCalculatorThin } from 'react-icons/pi';
 

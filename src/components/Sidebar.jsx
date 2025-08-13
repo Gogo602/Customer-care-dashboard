@@ -1,12 +1,8 @@
-import { Link, NavLink, useLocation } from 'react-router';
-import { FaBars, FaCog, FaTimes } from 'react-icons/fa';
-import { MdOutlineDashboard, MdOutlinePendingActions } from "react-icons/md";
-import { FaRegStar } from "react-icons/fa";
-import { AiOutlineLineChart } from "react-icons/ai";
+import { useLocation } from 'react-router';
+import { FaBars } from 'react-icons/fa';
 import { useState } from 'react';
-// import { assets } from '../assets/assets';
 import Desktop from './sidebar/Desktop';
-import Mobile from './sidebar/mobile';
+import Mobile from './sidebar/Mobile';
 
 const Sidebar = () => {
     const location = useLocation();
