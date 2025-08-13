@@ -1,0 +1,44 @@
+import { Link, NavLink, useLocation } from 'react-router';
+import { FaBars, FaCog, FaTimes } from 'react-icons/fa';
+import { MdOutlineDashboard, MdOutlinePendingActions } from "react-icons/md";
+import { FaRegStar } from "react-icons/fa";
+import { AiOutlineLineChart } from "react-icons/ai";
+import { useState } from 'react';
+// import { assets } from '../assets/assets';
+import Desktop from './sidebar/Desktop';
+import Mobile from './sidebar/mobile';
+
+const Sidebar = () => {
+    const location = useLocation();
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+
+   
+
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
+
+    // Define active and inactive classes based on theme
+    const activeClass = "bg-[#f7cc67]  text-white";
+    const inactiveClass = "hover:border hover:border-[#f7cc67] text-white";
+
+    return (
+        <>
+            {/* Mobile Menu Toggle Button (visible only on small screens) */}
+            <div className="lg:hidden fixed top-3 left-3 z-40">
+                <FaBars
+                    onClick={() => setShowMobileMenu(true)}
+                    className="w-8 h-8 cursor-pointer text-[#F6B10A]  border rounded-md"
+                />
+            </div>
+
+            <Desktop activeClass={activeClass} inactiveClass={inactiveClass} isActive={isActive}/>
+
+            {/* Mobile Sidebar (visible only when showMobileMenu is true and on small screens) */}
+            <Mobile activeClass={activeClass}  isActive={isActive} showMobileMenu={showMobileMenu} setShowMobileMenu={setShowMobileMenu}/>
+        </>
+    );
+};
+
+export default Sidebar;
