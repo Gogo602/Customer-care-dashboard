@@ -22,10 +22,10 @@ const Sidebar = () => {
     return (
         <>
             {/* Mobile Menu Toggle Button (visible only on small screens) */}
-            <div className="lg:hidden fixed top-3 left-3 z-40">
+            <div className="lg:hidden fixed top-3 right-3 z-40">
                 <FaBars
                     onClick={() => setShowMobileMenu(true)}
-                    className="w-8 h-8 cursor-pointer text-[#F6B10A]  border rounded-md"
+                    className="w-8 h-8 cursor-pointer text-[#F6B10A] "
                 />
             </div>
 

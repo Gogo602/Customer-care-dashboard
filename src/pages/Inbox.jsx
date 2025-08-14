@@ -19,9 +19,9 @@ export default function Inbox() {
     };
 
     return (
-        <div className='w-full h-screen md:pl-64 mb-10 bg-gray-100 '>
+        <div className='w-full h-screen lg:pl-64 mb-10 bg-gray-100 '>
                 <div className='flex items-center w-full'>
-                    <div className='flex items-center justify-between text-center space-x-1 border-3 border-white text-md w-full mt-1 mr-5'> {/* Added shadow-sm */}
+                    <div className='flex items-center justify-between flex-wrap text-center space-x-1 border-3 border-white text-md w-full mt-1 mr-5'> {/* Added shadow-sm */}
                         <button
                             onClick={() => setActiveTab('all')}
                             className={getButtonClasses('all')}
@@ -48,7 +48,7 @@ export default function Inbox() {
                         </button>
                     </div>
             </div>
-
+            {/* rendr tab */}
             {activeTab === 'all' && <AllNotification />}
             {activeTab === 'urgent' && <Urgent />}
             {activeTab === 'warning' && <Warning />}

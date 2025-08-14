@@ -17,7 +17,7 @@ export default function Mobile({showMobileMenu, setShowMobileMenu, isActive, act
                 onClick={() => setShowMobileMenu(false)}
             >
                 <div
-                    className={`fixed top-0 bottom-0 left-0 w-68 bg-[#F6B10A]  text-white
+                    className={`fixed top-0 bottom-0 left-0 w-70 bg-[#F6B10A]  text-white
                                 shadow-lg transform transition-transform duration-300 ease-in-out z-50
                                 ${showMobileMenu ? 'translate-x-0' : '-translate-x-full'}`}
                     onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the sidebar
@@ -25,7 +25,7 @@ export default function Mobile({showMobileMenu, setShowMobileMenu, isActive, act
                     <div className='flex justify-between items-center p-6  pb-5'>
                         <div className='flex items-center space-x-4 text-white'>
                             <img src={assets.logo} alt="Binuain_logo" className='w-10'/>
-                            <h4 className='text-3xl'>BINUAIN</h4>
+                            <h4 className='text-3xl font-bold'>BINUAIN</h4>
                         </div>
                         <FaTimes
                             onClick={() => setShowMobileMenu(false)}
@@ -71,7 +71,7 @@ export default function Mobile({showMobileMenu, setShowMobileMenu, isActive, act
                             <FaCog className="w-5 h-5 mr-3" /> Settings
                         </NavLink>
                 </ul>
-                <div className="inline-block w-full pl-10 space-x-5 pt-5 space-y-3 lg:hidden">
+                <div className="inline-block w-full pl-10 space-x-5 pt-10 space-y-3 lg:hidden">
                     <button className="border border-gray-200 py-2 px-5 rounded-md">Break</button>
                     <button className="border border-red-500 text-red-500 bg-red-200 p-2 rounded-md">Clock out</button>
                     <div className="flex items-center space-x-2 ">
@@ -82,7 +82,7 @@ export default function Mobile({showMobileMenu, setShowMobileMenu, isActive, act
                         </div>
                     </div>
                     <div >
-                        <p className="lg:hidden flex items-center ">
+                        <p className="md:hidden flex items-center ">
                             <HiOutlineArrowPathRoundedSquare className="w-5 h-5 text-white mr-1" />
                             Last updated 2 mins ago
                         </p>
