@@ -80,7 +80,7 @@ export default function Action() {
                 <ReassignTrade handleCancel={handleCancel} handleConfirm={handleConfirm} />
             )}
 
-            <Link to="/trade-details" className="border border-gray-200 rounded-md px-4 py-2 bg-[#F59E0B] text-white">Trade Details</Link>
+            <div to="/trade-details" className="border border-gray-200 rounded-md px-4 py-2 bg-[#F59E0B] text-white">Trade Details</div>
         </div>
     );
 }
