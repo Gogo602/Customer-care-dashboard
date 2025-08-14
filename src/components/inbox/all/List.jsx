@@ -12,7 +12,7 @@ export default function List({ tickets, onSelect, selectedTicketId }){
         >
             <div className="space-y-2">
                 <p className="font-bold text-[14px]">{ticket.agent}</p>
-                <p className="text-[12px] text-gray-500">₦{ticket.tradeDetails.amount}</p>
+                <p className="text-[12px] text-gray-500">{ticket.tradeDetails.amount}</p>
             </div>
             <div  className="text-[12px] space-y-1">
                 <p>{ticket.tradeDetails.platform}</p>

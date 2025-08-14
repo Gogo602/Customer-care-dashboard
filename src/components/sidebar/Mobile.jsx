@@ -58,22 +58,20 @@ export default function Mobile({showMobileMenu, setShowMobileMenu, isActive, act
                         </NavLink>
                         <NavLink
                             onClick={() => setShowMobileMenu(false)}
-                            to={"inbox"}
-                            className={`flex items-center py-3 px-4 rounded-lg ${isActive('inbox') ? activeClass : `text-white hover:border hover:border-[#f7cc67]`}`}
+                            to={"/inbox"}
+                            className={`flex items-center py-3 px-4 rounded-lg ${isActive('/inbox') ? activeClass : `text-white hover:border hover:border-[#f7cc67]`}`}
                         >
                             <LuInbox className="w-5 h-5 mr-3" /> Inbox
                         </NavLink>
                         <NavLink
                             onClick={() => setShowMobileMenu(false)}
-                            to={"settings"}
-                            className={`flex items-center py-3 px-4 rounded-lg ${isActive('settings') ? activeClass : `text-white hover:border hover:border-[#f7cc67]`}`}
+                            to={"/settings"}
+                            className={`flex items-center py-3 px-4 rounded-lg ${isActive('/settings') ? activeClass : `text-white hover:border hover:border-[#f7cc67]`}`}
                         >
                             <FaCog className="w-5 h-5 mr-3" /> Settings
                         </NavLink>
                 </ul>
                 <div className="inline-block w-full pl-10 space-x-5 pt-10 space-y-3 lg:hidden">
-                    <button className="border border-gray-200 py-2 px-5 rounded-md">Break</button>
-                    <button className="border border-red-500 text-red-500 bg-red-200 p-2 rounded-md">Clock out</button>
                     <div className="flex items-center space-x-2 ">
                         <FaUser className="w-9 h-9 text-gray-500 rounded-full bg-gray-200 p-2"/>
                         <div>
@@ -87,6 +85,8 @@ export default function Mobile({showMobileMenu, setShowMobileMenu, isActive, act
                             Last updated 2 mins ago
                         </p>
                     </div>
+                    <button className="border border-gray-200 py-2 px-5 rounded-md">Break</button>
+                    <button className="border border-red-500 text-red-500 bg-red-200 p-2 rounded-md">Clock out</button>
                 </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ export default function TradeDetails({ ticketData }) {
   }
 
   return (
-    <div className="border border-gray-300 px-3 rounded-md w-full min-h-screen space-y-2">
+    <div className="border border-gray-200 px-3 rounded-md w-full min-h-screen space-y-2">
       {/* Use the tradeDetails object from the ticketData prop */}
       <h3 className="font-bold text-xl">Trade Details</h3>
       <div className="text-[12px]">

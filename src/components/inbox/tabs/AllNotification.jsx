@@ -8,95 +8,9 @@ import { FaAngleDown, FaAngleUp, FaCheck } from 'react-icons/fa';
 import { GoArrowUpRight } from 'react-icons/go';
 import { LiaTimesSolid } from 'react-icons/lia';
 import { TbUserCheck } from 'react-icons/tb';
+import { mockTicketsData } from '../../../assets/assets';
 
-// mock data
-const mockTicketsData = [
-  {
-    id: 'ticket1',
-    agent: 'PaxfulAgent001',
-    status: 'Urgent',
-    totalmsg: "5 messages",
-        chatMessages: [
-    { sender: 'Customer', text: 'My transaction was not successfull but were deducted', time: 'May 12, 10:45 AM (1h 53m ago)' },
-      { sender: 'Support Agent', text: 'I understand your concern. Let me check the transaction details. Could you please provide your account email?', time: 'May 12, 10:45 AM (2h ago)' },
-      { sender: 'Customer', text: 'My email is user@example.com', time: 'May 12, 10:45 AM (1h 53m ago)' },
-    ],
-    tradeDetails: {
-      ticketId: 'PAX-12345',
-      platform: 'Paxful',
-      paidBy: 'Aisha Vendor',
-      coinType: 'Bitcoin',
-      amount: '₦1,550,000',
-      offerRate: '₦1750 NGN/USD',
-      paymentMethod: 'Bank Transfer',
-      status: 'Paid',
-      tradeLink: "AFYzaQA8stc",
-      timeline: ' May 12, 2025 - 10:35 AM',
-      fundsStatus: 'Funded',
-      transactionType: "Funds Deposited"
-    },
-  },
-  {
-    id: 'ticket2',
-    agent: 'SpeedyPay',
-    status: 'Warning',
-    totalmsg: "5 messages",
-    chatMessages: [{ sender: 'System', text: '5 messages' }],
-    tradeDetails: {
-      platform: 'Paxful',
-      amount: '₦750,000',
-      status: 'Paid',
-    },
-  },
-  {
-    id: 'ticket3',
-    agent: 'CryptoExchange',
-    status: 'Info',
-    totalmsg: "3 messages",
-    chatMessages: [{ sender: 'System', text: 'Info' }],
-    tradeDetails: {
-      platform: 'CryptoEx',
-      amount: '₦2,500,000',
-      status: 'Info',
-    },
-  },
-  {
-    id: 'ticket4',
-    agent: 'QuickTrade',
-    status: 'Warning',
-    totalmsg: "1 messages",
-    chatMessages: [{ sender: 'System', text: '1 message' }],
-    tradeDetails: {
-      platform: 'QuickTrade',
-      amount: '₦820,000',
-      status: 'Paid',
-    },
-  },
-  {
-    id: 'ticket5',
-    agent: 'PaxfulAgent001',
-    status: 'Urgent',
-    totalmsg: "8 messages",
-    chatMessages: [{ sender: 'System', text: '8 messages' }],
-    tradeDetails: {
-      platform: 'Paxful',
-      amount: '₦3,250,000',
-      status: 'Funded',
-    },
-  },
-  {
-    id: 'ticket6',
-    agent: 'Binance',
-    status: 'Urgent',
-    totalmsg: "6 messages",
-    chatMessages: [{ sender: 'System', text: '6 messages' }],
-    tradeDetails: {
-      platform: 'Binance',
-      amount: '₦5,850,000',
-      status: 'Funded',
-    },
-  },
-];
+
 
 export default function AllNotification() {
     const [selectedTicket, setSelectedTicket] = useState(null);
@@ -113,7 +27,7 @@ export default function AllNotification() {
 
     return (
         <div className="bg-white">
-            <Header />
+            <Header ticketData={selectedTicket} />
             <div className="flex w-full min-h-screen">
                 {/* Desktop View */}
                 {!isMobile && (
@@ -143,7 +57,7 @@ export default function AllNotification() {
                     <div className="w-full flex flex-col border">
                         
                         <div className="flex items-center justify-between px-5 relative font-bold">
-                            <button onClick={handleBackToList} className="p-2 bg-gray-200">
+                            <button onClick={handleBackToList} className="p-2 bg-gray-200 rounded-md">
                                 ← Back 
                             </button>
                             <button

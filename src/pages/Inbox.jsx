@@ -11,7 +11,7 @@ export default function Inbox() {
 
     //switch button active state
     const getButtonClasses = (tabName) => {
-        return `p-1 rounded-md transition-colors px-15 text-center font-bold duration-200 ease-in-out ${
+        return `p-1 rounded-md transition-colors px-10 text-center font-bold duration-200 ease-in-out ${
             activeTab === tabName
                 ? 'bg-white text-gray-800 px-15 text-center' 
                 : 'text-gray-800' 
