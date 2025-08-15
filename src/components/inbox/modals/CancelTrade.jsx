@@ -1,11 +1,11 @@
 
 
-export default function CancelTrade({ selectedAction, handleCancel, handleConfirm}) {
+export default function CancelTrade({ handleCancel, handleConfirm}) {
     return (
         <div className="fixed inset-0 bg-black/80 bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-lg shadow-xl w-80 md:w-120">
                 <h3 className="text-lg font-bold mb-1">Cancel Trade</h3>
-                <p className="text-[16px] mb-4 text-gray-600">Are you sure you want to {selectedAction}? this action cannot be undone.</p>
+                <p className="text-[16px] mb-4 text-gray-600">Are you sure you want to cancel this trade? this action cannot be undone.</p>
                 <div className="space-x-2 text-[16px] ">
                     <h4 className="">Reason for cancellation</h4>
                     <input type="text" name="reason" placeholder="Select reason..." className="w-full text-gray-600 text-md border rounded-md border-gray-300 px-2 py-3 outline-0"/>
