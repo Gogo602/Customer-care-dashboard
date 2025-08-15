@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import CoinExchange from './pages/CoinExchange';
 import BankManagement from './pages/BankManagement';
 import Settings from './pages/Settings';
+import {ToastContainer} from 'react-toastify'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Navbar />
+        <ToastContainer />
         <main className="flex-1 overflow-y-auto">
           <Routes>
             <Route path="/" element={<Dashboard />} />

@@ -4,33 +4,45 @@ import { GoArrowUpRight } from 'react-icons/go';
 import { LiaTimesSolid } from 'react-icons/lia';
 import { TbUserCheck } from 'react-icons/tb';
 import { Link } from 'react-router';
+import { toast } from 'react-toastify';
 import CancelTrade from './modals/CancelTrade';
+import ReassignTrade from './modals/ReassignTrade';
 
-export default function TradeActionMenu() {
+export default function Action() {
     const [showActions, setShowActions] = useState(false);
-    const [showConfirmMenu, setShowConfirmMenu] = useState(false);
-    const [selectedAction, setSelectedAction] = useState('');
+    const [selectedAction, setSelectedAction] = useState(null);
 
     const handleActionClick = (action) => {
-        // Hide the action menu
         setShowActions(false);
-        // Set the selected action and show the confirmation menu
-        setSelectedAction(action);
-        setShowConfirmMenu(true);
+        // Show modals for specific actions
+        if (action === 'Cancel Trade' || action === 'Reassign Trade') {
+            setSelectedAction(action);
+        } else {
+            // For other actions, just show a toast notification
+            toast.success(`${action} action triggered!`, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
     };
 
     const handleConfirm = () => {
-        // Here you would perform the action based on `selectedAction`
-        console.log(`Confirmed action: ${selectedAction}`);
-        // Hide the confirmation menu
-        setShowConfirmMenu(false);
-        setSelectedAction('');
+        if (selectedAction) {
+            toast.success(`${selectedAction} Confirmed!`, {
+                position: "top-right",
+                autoClose: 3000,
+            });
+        }
+        setSelectedAction(null); // Close the modal
     };
 
     const handleCancel = () => {
-        // Hide the confirmation menu without performing the action
-        setShowConfirmMenu(false);
-        setSelectedAction('');
+        setSelectedAction(null); // Close the modal
     };
 
     return (
@@ -42,7 +54,6 @@ export default function TradeActionMenu() {
                 Action {showActions ? <FaAngleUp className='w-3 h-3 ml-1' /> : <FaAngleDown className='w-3 h-3 ml-1' />}
             </button>
 
-            {/* Main Action Menu */}
             {showActions && (
                 <div className="absolute top-full right-25 mt-2 w-48 bg-white rounded-md shadow-md py-1 z-40 text-[15px] lg:right-38">
                     <hr className="text-gray-400" />
@@ -61,10 +72,14 @@ export default function TradeActionMenu() {
                 </div>
             )}
 
-            {/* Confirmation Menu */}
-            {showConfirmMenu && (
-                <CancelTrade selectedAction={selectedAction} handleCancel={handleCancel} handleConfirm={handleConfirm}/>
+            {/* Conditional Modal Rendering */}
+            {selectedAction === 'Cancel Trade' && (
+                <CancelTrade handleCancel={handleCancel} handleConfirm={handleConfirm} />
             )}
+            {selectedAction === 'Reassign Trade' && (
+                <ReassignTrade handleCancel={handleCancel} handleConfirm={handleConfirm} />
+            )}
+
             <Link to="/trade-details" className="border border-gray-200 rounded-md px-4 py-2 bg-[#F59E0B] text-white">Trade Details</Link>
         </div>
     );

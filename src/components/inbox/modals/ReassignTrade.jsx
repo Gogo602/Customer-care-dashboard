@@ -1,10 +1,10 @@
 
 
-export default function CancelTrade({ selectedAction, handleCancel, handleConfirm}) {
+export default function ReassignTrade({ selectedAction, handleCancel, handleConfirm}) {
     return (
         <div className="fixed inset-0 bg-black/80 bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-lg shadow-xl w-80 md:w-120">
-                <h3 className="text-lg font-bold mb-1">Cancel Trade</h3>
+                <h3 className="text-lg font-bold mb-1">Reassign Trade</h3>
                 <p className="text-[16px] mb-4 text-gray-600">Select a support agent to {selectedAction} this ticket to</p>
                 <div className="space-x-2 text-[16px] ">
                     <h4 className="">Assign To</h4>
